@@ -13,7 +13,7 @@ export class AuthService {
     }
 
     hasPermission (): Observable<boolean> {
-        return of(false).pipe(delay(500))
+        return of(true).pipe(delay(500))
     }
 
 }

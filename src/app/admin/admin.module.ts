@@ -5,7 +5,8 @@ import { CreateProductComponent } from './components/create-product/create-produ
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { RouterModule, Routes } from '@angular/router';
-import { CanActivate, Permission } from '../auth/route-gurd';
+import { CanActivate,  CanDeactivate,  Permission } from '../auth/route-gurd';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
           {
             path: 'create-user',
             component: CreateUserComponent,
+           canDeactivate:[CanDeactivate]
 
           },
         ]
@@ -55,6 +57,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule
 
   ]
 })
